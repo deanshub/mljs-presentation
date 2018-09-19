@@ -1,0 +1,32 @@
+{
+  "name": "stockRl",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck src/deck.mdx",
+    "build": "mdx-deck build src/deck.mdx",
+    "pdf": "mdx-deck pdf src/deck.mdx",
+    "image": "mdx-deck screenshot src/deck.mdx",
+    "help": "mdx-deck"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^0.12.7",
+    "@tensorflow/tfjs-core": "^0.12.18",
+    "config": "^1.30.0",
+    "file-loader": "^2.0.0",
+    "mdx-deck": "^1.7.3",
+    "moment": "^2.22.1",
+    "react-youtube": "^7.6.0",
+    "yahoo-stocks": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.19.1",
+    "nodemon": "^1.17.3"
+  }
+}

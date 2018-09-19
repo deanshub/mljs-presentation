@@ -1,0 +1,410 @@
+import { Head, Appear, Image } from 'mdx-deck'
+import YouTube from 'react-youtube'
+
+export { default as theme } from './theme'
+import iknow from 'file-loader!../assets/iknow.gif'
+import notexactly from 'file-loader!../assets/notexactly.gif'
+import ml from 'file-loader!../assets/ml.png'
+import mlAlgo from 'file-loader!../assets/mlAlgo.png'
+import dogsCats from 'file-loader!../assets/dogsCats.png'
+import clustering from 'file-loader!../assets/clustering.png'
+import nn from 'file-loader!../assets/nn.jpg'
+import decisionTree from 'file-loader!../assets/decisionTree.png'
+import convnet from 'file-loader!../assets/convnet.jpg'
+import rnn from 'file-loader!../assets/rnn.png'
+import gan from 'file-loader!../assets/gan.png'
+import qLearning from 'file-loader!../assets/qLearning.png'
+import mnistExamples from 'file-loader!../assets/mnistExamples.png'
+import mnistMatrix from 'file-loader!../assets/MNISTmatrix.png'
+import mnistFull from 'file-loader!../assets/nnFull.svg'
+import breakRM from 'file-loader!../assets/break.jpg'
+const youtubeOpts = {
+  height: '800',
+  width: '1024',
+}
+
+<Head>
+  <title>ML in JS</title>
+</Head>
+
+# Machine Learning in Javascript
+## [Dean Shub](https://github.com/deanshub) [(CTO @ Stox)](https://www.linkedin.com/in/deanshub/)
+
+---
+
+## Who am I? Why am I here?
+
+<Appear>
+    <img src={iknow} />
+</Appear>
+
+```notes
+- CTO @ Stox
+- I'm a developer not a data scientict
+- I'll make you know ML
+```
+
+---
+
+<img src={notexactly} />
+
+```notes
+- well... not exactly
+- I hope you'll get the basics terms
+- I hope you'll want to do stuff with ML
+```
+
+---
+# P=NP
+
+```notes
+- ML is for:
+- Problems we can't answer
+- Hard problems
+```
+
+---
+
+<Image src={ml} size="contain"/>
+
+---
+<Image src={mlAlgo} size="contain"/>
+
+```notes
+- Figure out the type of problem, in order to choose the right algorithm
+- Let's see what kinds there are
+```
+---
+Supervised vs Unsupervised
+<ul>
+  <Appear>
+    <li>Regression</li>
+    <li>Classification</li>
+    <li>Clustering</li>
+    <li>Association rules</li>
+    <li>Reinforcment learning</li>
+    <li>Generation</li>
+    <li>...</li>
+  </Appear>
+</ul>
+---
+### Housing Market
+<table>
+  <thead>
+    <th>Location</th>
+    <th>Size</th>
+    <th>Rooms</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tel-Aviv</td>
+      <td>60</td>
+      <td>2</td>
+      <td>2.5M</td>
+    </tr>
+    <tr>
+      <td>Holon</td>
+      <td>90</td>
+      <td>3</td>
+      <td>3M</td>
+    </tr>
+    <tr>
+      <td>Eilat</td>
+      <td>70</td>
+      <td>2.5</td>
+      <td>2.6M</td>
+    </tr>
+    <tr>
+      <td>Rehovot</td>
+      <td>80</td>
+      <td>4</td>
+      <td>3.8M</td>
+    </tr>
+    <tr>
+      <td>Tel-Aviv</td>
+      <td>100</td>
+      <td>3</td>
+      <td>6M</td>
+    </tr>
+  </tbody>
+</table>
+
+```notes
+- I want a function that tells me the price of a house!
+1) Analyze the data and try to genrlize rules to an algo
+2) Trial and error, loss & optimization, statistics, ML
+- Supervised Regression Problem
+```
+---
+<Image src={dogsCats} size="contain"/>
+
+```notes
+- Supervised Classification
+```
+---
+<Image src={clustering} size="contain"/>
+
+```notes
+- Unsupervised Clustering (KMeans)
+```
+---
+# Main resons for the ML rise
+### Data Volume
+
+### Hardware (GPU)
+
+```notes
+- Every year the data doubles
+```
+---
+# Algorithms
+---
+<Image src={decisionTree} size="contain"/>
+
+```notes
+- Decision Tree
+- Should we go play?
+- Break down the data
+```
+---
+<Image src={nn} size="contain"/>
+
+```notes
+- NN\ DNN
+- input layer, output layer, hidden layers
+- https://www.youtube.com/watch?v=aircAruvnKk
+```
+---
+<Image src={mnistExamples} size="contain"/>
+
+```notes
+- digit recognition
+```
+---
+<Image src={mnistMatrix} size="contain"/>
+
+```notes
+- input 24X24 = 784
+- weight of node is amount of black
+```
+---
+<Image style={{backgroundColor:'#ffffff'}} src={mnistFull} size="contain"/>
+
+```notes
+- output 10
+- why this works? why we need hidden layers?
+- neurons activate when something is farmiliar
+```
+---
+<YouTube
+  videoId="H7Ym3DMSGms?t=21"
+  opts={youtubeOpts}
+/>
+---
+<Image src={convnet} size="contain"/>
+
+```notes
+- CNN
+- how a computer compare images?
+- use filter sample and multiply with the original image (each section)
+- generating a stack of filtered images
+- pooling filter window to the max value
+- generates the same basic idea but with less values (less sensative)
+- ReLU (rectified linear unit) change negative value to 0
+- at the end goes to fully connected layer that states the class
+- https://www.youtube.com/watch?v=FmpDIaiMIeA
+```
+---
+<YouTube
+  videoId="yQwfDxBMtXg"
+  opts={youtubeOpts}
+/>
+---
+<Image src={rnn} size="contain"/>
+
+```notes
+- RNN\ LSTM
+- used for sequential data
+- How do we use the last prediction as input for the next prediction?
+- weather prediction/ translation
+```
+---
+<YouTube
+  videoId="j60J1cGINX4"
+  opts={youtubeOpts}
+/>
+---
+<Image src={gan} size="contain"/>
+
+```notes
+- GAN
+- 2 networks discriminator (classifier) & generator
+- focus on weakness (the classifier optimizes the generator)
+- https://www.youtube.com/watch?v=Sw9r8CL98N0
+```
+---
+<YouTube
+  videoId="2edOMMREazo"
+  opts={youtubeOpts}
+/>
+---
+<Image src={qLearning} size="contain"/>
+
+```notes
+- RL - Q Learning
+- markov model
+- https://www.youtube.com/watch?v=3zeg7H6cAJw
+```
+---
+<YouTube
+  videoId="qv6UVOQ0F44"
+  opts={youtubeOpts}
+/>
+---
+<Image src={breakRM} size="contain"/>
+---
+# Important Terms
+Backpropogation
+
+Loss
+
+Optimization
+
+Overfitting
+
+```notes
+- Loss fn - how wrong are we. (should be minimized) MSE\MAE\CrossEntropy
+- Optimization - how to change\improve the current weights and biases. gradient decent\ SGD\ Adam
+```
+---
+# ML process
+Train
+
+Test
+
+Evaluate
+
+Compare Models
+---
+# How was it solved?
+
+```notes
+- here are some examples of DL solutions
+- let's see how were they solved
+```
+---
+# Speech 2 Text
+
+```notes
+- sound wave is a bunch of numbers (sample rate)
+- learning letters from data (20ms at a time)
+- consturcting letters to words
+- words to real words
+- https://medium.com/@ageitgey/machine-learning-is-fun-part-6-how-to-do-speech-recognition-with-deep-learning-28293c162f7a
+```
+---
+# Object Detection
+```notes
+- classification
+- CNN -> R-CNN (regiouns bounding boxs to CNN)
+- YOLO - you only look once
+- grid the image and confidence of bounding box
+- combine the confidence of the bounding box and the class
+- https://medium.com/technologymadeeasy/the-best-explanation-of-convolutional-neural-networks-on-the-internet-fbb8b1ad5df8
+- https://www.youtube.com/watch?v=4eIBisqx9_g
+```
+---
+# Face Recognition
+```notes
+- initialy location of features and messurements between them
+- HOG
+- one picture with same face and one with different face
+- the optimization function should make it so that that it's closer to one and different from the other
+- https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78
+```
+---
+# Transfer Learning
+```notes
+- taking a model and replacing of the last layer
+- https://www.youtube.com/watch?v=mPFq5KMxKVw
+```
+---
+# ML frameworks
+Tensorflow
+
+Caffe
+
+Theano
+
+PyTorch
+
+Keras
+---
+# Tensorflow.js
+```notes
+- scalar tensors and shapes (print/data)
+- tf.zeros/ tf.ones
+- tf.variable .assign
+- .square() / .add(t2)/ mul(t2)
+- direct model using ops
+- model out of layers
+- memory management dispose()/ tidy
+```
+---
+[linear Regression (tfjs)](https://codesandbox.io/s/rmn8rj323p)
+---
+[polynomial Regression (tfjs)](https://codesandbox.io/s/kx8y4l5j1o)
+---
+[Classification (tfjs)](https://codesandbox.io/s/8x1nol26y2)
+---
+[RL (tfjs)](https://github.com/deanshub/stockRl)
+---
+# Other cool ML stuff
+---
+download models\ user ML apis
+---
+<YouTube
+  videoId="mCh_r6HoDn4"
+  opts={youtubeOpts}
+/>
+
+```notes
+- google duplex
+```
+---
+<YouTube
+  videoId="GbLQE2C181U"
+  opts={youtubeOpts}
+/>
+
+```notes
+- autoML
+```
+---
+<YouTube
+  videoId="92tn67YDXg0?t=438"
+  opts={youtubeOpts}
+/>
+
+```notes
+- Dota2
+```
+---
+[self driving cars](https://comma.ai/)
+
+[sounds of video based on position](http://sound-of-pixels.csail.mit.edu/)
+
+[everybody dance now](https://www.youtube.com/watch?v=PCBTZh41Ris)
+```notes
+```
+---
+Links
+
+[Fb ML](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/)
+, [Google ML crash course](https://developers.google.com/machine-learning/crash-course/prereqs-and-prework)
+, [2 minute paper](https://www.youtube.com/user/keeroyz)
+, [Siraj](https://www.youtube.com/watch?v=nMK94JlKRb4&list=PL2-dafEMk2A6TMJdtMZTusTbtUeWAKc3f)
+, [Cs231n](https://www.youtube.com/watch?v=NfnWJUyUJYU&index=1&list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC)
+, [Coursera andrew ng](https://www.coursera.org/learn/machine-learning)
+, [Pong from pixels](http://karpathy.github.io/2016/05/31/rl/)
